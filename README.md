@@ -1,1 +1,5 @@
-# python-basic
+# Python
+
+## Reference
+
+- [Edube](https://edube.org/)
