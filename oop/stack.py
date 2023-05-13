@@ -11,6 +11,24 @@ class Stack:
         return val
 
 
+class AddingStack(Stack):
+    def __init__(self):
+        Stack.__init__(self)
+        self.__sum = 0
+
+    def push(self, val):
+        self.__sum += val
+        Stack.push(self, val)
+
+    def pop(self):
+        val = Stack.pop(self)
+        self.__sum -= val
+        return val
+
+    def get_sum(self):
+        return self.__sum
+
+
 stack_object = Stack()
 
 stack_object.push(3)
@@ -20,4 +38,6 @@ stack_object.push(1)
 print(stack_object.pop())
 print(stack_object.pop())
 print(stack_object.pop())
+print()
+print(stack_object.__dict__)
 

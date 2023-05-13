@@ -1,0 +1,14 @@
+class ExampleClass:
+    varia = 1
+
+    def __init__(self, val):
+        ExampleClass.varia = val
+        self.varia = 10
+        varia = 10
+
+
+print(ExampleClass.__dict__)
+example_object = ExampleClass(2)
+
+print(ExampleClass.__dict__)
+print(example_object.__dict__)
