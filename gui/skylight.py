@@ -1,8 +1,11 @@
 import tkinter
+from tkinter import messagebox
 
 
 def Click():
-    skylight.destroy()
+    replay = messagebox.askquestion("Quit?", "Are you sure?")
+    if replay == "yes":
+        skylight.destroy()
 
 
 skylight = tkinter.Tk()
