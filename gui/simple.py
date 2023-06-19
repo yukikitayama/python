@@ -20,6 +20,30 @@ button.pack(fill=tk.X)
 switch = tk.IntVar()
 switch.set(1)
 
-checkbutton = tk
+checkbutton = tk.Checkbutton(
+    window,
+    text="Check Button",
+    variable=switch
+)
+checkbutton.pack()
+
+entry = tk.Entry(window, width=30)
+entry.pack()
+
+radiobutton_1 = tk.Radiobutton(
+    window,
+    text="Steak",
+    variable=switch,
+    value=0
+)
+radiobutton_1.pack()
+
+radiobutton_2 = tk.Radiobutton(
+    window,
+    text="Noodle",
+    variable=switch,
+    value=1
+)
+radiobutton_2.pack()
 
 window.mainloop()
