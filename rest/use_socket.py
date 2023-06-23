@@ -10,3 +10,13 @@ sock.send(
     + bytes(server_addr, "utf8")
     + b"\r\nConnection: close\r\n\r\n"
 )
+reply = sock.recv(10000)
+
+sock.shutdown(socket.SHUT_RDWR)
+sock.close()
+
+print(reply)
+print()
+
+print(repr(reply))
+
