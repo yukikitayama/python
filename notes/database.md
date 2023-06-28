@@ -7,6 +7,10 @@ and data exchange with other database systems.
 
 Structured Query Language. Developed in 1970s by IBM.
 
+### UPDATE
+
+If you forget about the `WHERE` caluse, all data in the table will be updated.
+
 ## SQLite
 
 Database management systems. Stored in only one file. No separate server process is required to communicate with the database.
@@ -20,3 +24,9 @@ database in Python.
 
 `sqlite3.connect(xxx.db)` creates a database only if it cannot find a database `xxx.db` in a location. If a database exists,
 SQLite connects to it.
+
+## Cursor object iterator vs fetchall()
+
+`fetchall` method is less efficient than the iterator, because it reads all records into the memory and then returns a
+list of tuples. If a table contains a huge number of records, this can cause memory issues.
+
