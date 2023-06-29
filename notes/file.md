@@ -4,6 +4,8 @@
 
 Markup language for storing and transporting data by systems using the SOAP communication protocol.
 
+`<!-- -->` is a comment.
+
 Standard Python library
 
 - `xml.etree.ElementTree`

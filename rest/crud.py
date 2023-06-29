@@ -23,10 +23,12 @@ def show(json_):
 
 
 try:
-    reply = requests.get("http://localhost:3000/cars")
+    headers = {"Connection": "Close"}
+    reply = requests.get("http://localhost:3000/cars", headers=headers)
 except requests.RequestException:
     print("Communication error")
 else:
+    print("Connection=" + reply.headers["Connection"])
     if reply.status_code == requests.codes.ok:
         # print(reply.text)
         print(reply.headers["Content-Type"])
