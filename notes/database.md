@@ -25,6 +25,9 @@ database in Python.
 `sqlite3.connect(xxx.db)` creates a database only if it cannot find a database `xxx.db` in a location. If a database exists,
 SQLite connects to it.
 
+`:memory:` is a special connection string to indicate that the database should be created and stored in memory rather 
+than on disk. `conn = sqlite3.connect(":memory:")`
+
 ## Cursor object iterator vs fetchall()
 
 `fetchall` method is less efficient than the iterator, because it reads all records into the memory and then returns a

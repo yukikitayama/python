@@ -41,3 +41,12 @@ Use `getroot()` to access to the root element and we can reach any elements in t
 `find(TAG)` only returns the first child element containing the tag or matching **XPath expression**
 
 `write(FILE.xml)` to save all the changes in XML document because only modifying the XML document doesn't save anything.
+
+## CSV
+
+Typically comma-separated values, but other separators such as semicolon or tab are also allowed.
+
+Only one type of separator can be used.
+
+
+
