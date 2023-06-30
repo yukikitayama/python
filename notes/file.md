@@ -48,5 +48,21 @@ Typically comma-separated values, but other separators such as semicolon or tab 
 
 Only one type of separator can be used.
 
+Save special characters
+- `csv.QUOTE_MINIMAL` quotes only values with special characters such as separator or `quotechar`
+- `csv.QUOTE_ALL` quotes all values with `quotechar`.
+- `csv.QUOTE_NONNUMERIC` quotes only non-numeric values with `quotechar`
 
+## Logging
+
+Use `logging` module to find the cause of an error
+
+Hierarchy is assigned based on the names passed to the `getLogger()` Logger names use the dot separator similar to modules.
+For example, `getLogger("hello")` creates a logger as a **child** of the root logger. `getLogger("hello.world")` creates
+a logger which is a child of `hello` logger
+
+Recommended way is to assign `__name__` to `getLogger()` because it's easy to specify the source of the logged message by
+the current module name.
+
+**Root logger** is at the highest point in the hierarchy.
 
