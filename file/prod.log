@@ -1,0 +1,16 @@
+CRITICAL:root:critical
+ERROR:root:error
+WARNING:root:warning
+INFO:root:info
+CRITICAL:root:critical
+ERROR:root:error
+WARNING:root:warning
+INFO:root:info
+CRITICAL:root:critical
+ERROR:root:error
+WARNING:root:warning
+INFO:root:info
+CRITICAL 2023-06-30 17:24:06,848 critical
+ERROR 2023-06-30 17:24:06,849 error
+WARNING 2023-06-30 17:24:06,849 warning
+INFO 2023-06-30 17:24:06,849 info

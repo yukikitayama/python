@@ -1,0 +1,7 @@
+[DEFAULT]
+host = some_host
+
+[DB]
+username = yuki
+password = some_password
+

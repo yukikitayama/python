@@ -66,3 +66,33 @@ the current module name.
 
 **Root logger** is at the highest point in the hierarchy.
 
+Root logger has the logging level set to `WARNING`, meaning `INFO` and `DEBUG` won't be printed. This or a higher level
+to be logged.
+
+Loggers created using the name argument have `NOTSET` level by default but inherit the logging level from the parent.
+
+`%(name)s` will be replaced by logger name.
+
+`%(levelname)s` will be replaced by logger level.
+
+`%(asctime)s` will be replaced by date format of when `LogRecord` object is created.
+
+`%(message)s` will be replaced by defined message.
+
+## configparser
+
+`configparser` module in Python standard library allows us to use a configuration file read by the code.
+
+The structure of the configuration file is similar to Microsoft Windows **INI files**.
+
+`:` and `=` are used to separate key/value entries.
+
+Use `;` or `#` for comments
+
+`[DEFAULT]` section contains the default values that can be read on the other sections.
+
+`config.read()` can have a list containing several configuration files.
+
+Section names are case sensitive, while the keys aren't
+
+`%(key)s` interpolate values by placing any key between `%(` and `)s`
