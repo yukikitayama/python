@@ -36,3 +36,14 @@ All widgets fall into 2 categories; clickable and non-clickable
 Don't have a `command` property
 
 You can use `bind()` to simulate command behavior
+
+## messagebox
+
+`messagebox` module has the predefined functions to announce something or ask questions to users
+
+- `askyesno()` has question mark
+- `askokcancel()` has question mark
+- `askretrycancel()` has a warning sign
+- `askquestion()` has a question mark icon
+- `showerror()` has a red warning icon, only OK button to respond, return `OK` string
+- `showwarning()` a warning icon, only OK button, return `OK` string
