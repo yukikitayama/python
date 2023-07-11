@@ -26,3 +26,8 @@ Response method `json()` can be used if the server response's header `Content-Ty
 
 Create (POST), Read (GET), Update (PUT), Delete (DELETE)
 
+## Socket
+
+`socket.sendto(data, address)` allows you to send data to a given address. Data is bytes-like object. This method is 
+typically used with UDP (User Datagram Protocol) sockets. Data is sent as individual packets without establishing a 
+persistent connection.
