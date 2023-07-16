@@ -42,6 +42,42 @@ Use `getroot()` to access to the root element and we can reach any elements in t
 
 `write(FILE.xml)` to save all the changes in XML document because only modifying the XML document doesn't save anything.
 
+```python
+import xml.etree.ElementTree as ET
+ 
+root = ET.Element('movies')
+ 
+movie1 = ET.SubElement(root, 'movie')
+ET.SubElement(movie1, 'title').text = 'The Shawshank Redemption'
+ET.SubElement(movie1, 'rate').text = '9.2'
+ 
+movie2 = ET.SubElement(root, 'movie')
+ET.SubElement(movie2, 'title').text = 'The Godhather'
+ET.SubElement(movie2, 'rate').text = '9.2'
+ 
+movie3 = ET.SubElement(root, 'movie')
+ET.SubElement(movie3, 'title').text = 'The Dark Knight'
+ET.SubElement(movie3, 'rate').text = '9.0'
+ 
+tree = ET.ElementTree(root)
+tree.write('movies.xml')
+```
+
+### DTD
+
+Document Type Definition
+
+`<!ELEMENT book (title, author, price)>` defines that book element must contain title, author and price elements.
+
+`<!ELEMENT title (#PCDATA)>` defines that title element is of type #PCDATA that means parse-able text data.
+
+`<!ATTLIST book category CDATA #REQUIRED>` defines that book element must have category attribute of type CDATA like
+`<book category="A">`
+
+### lxml
+
+`lxml` library with XPath expressions to query XML documents
+
 ## CSV
 
 Typically comma-separated values, but other separators such as semicolon or tab are also allowed.
@@ -52,6 +88,15 @@ Save special characters
 - `csv.QUOTE_MINIMAL` quotes only values with special characters such as separator or `quotechar`
 - `csv.QUOTE_ALL` quotes all values with `quotechar`.
 - `csv.QUOTE_NONNUMERIC` quotes only non-numeric values with `quotechar`
+
+## shelve
+
+`shelve.open("name.shlv", flag="<mode>")` Mode is following
+
+- `"r"` opens an existing database for read only
+- `"w"` opens existing database for read and write
+- `"c"` opens database for read and write, and if it doesn't exist, create a new database.
+- `"n"` always creates a new database with read and write.
 
 ## Logging
 
@@ -78,6 +123,14 @@ Loggers created using the name argument have `NOTSET` level by default but inher
 `%(asctime)s` will be replaced by date format of when `LogRecord` object is created.
 
 `%(message)s` will be replaced by defined message.
+
+Highest level of severity is `CRITICAL`. Lowest level of severity is `NOTSET`. 
+
+### Record logging events to a file
+
+`logging.basicConfig(filename="file.log")` records with default parameters
+
+`logging.basicConfig(filename="file.log", filemode="a", level=logging.CRITICAL)`
 
 ## configparser
 
