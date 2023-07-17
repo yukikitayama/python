@@ -1,5 +1,11 @@
 # PEP
 
+## String
+
+If string contains single-quote characters, it's recommended that you use double-quoted strings `comment = "I'm Yuki"`.
+
+If string contains double-quote characters, it's recommended that you use single-quoted strings `comment = 'He said "Hello".'`
+
 ## Docstring
 
 `__doc__` attribute, any string literals after the definition of a function/module/class/method

@@ -78,6 +78,27 @@ Document Type Definition
 
 `lxml` library with XPath expressions to query XML documents
 
+### XPath
+
+Use 1-based index to select data in XPath expression.
+
+For example `store/book[2]/author` to select the author of the **second** book in the following XML
+
+```
+<store>
+  <book>
+    <title>Python Programming</title>
+    <author>John Smith</author>
+    <price>29.99</price>
+  </book>
+  <book>
+    <title>Web Development Basics</title>
+    <author>Jane Johnson</author>
+    <price>19.99</price>
+  </book>
+</store>
+```
+
 ## CSV
 
 Typically comma-separated values, but other separators such as semicolon or tab are also allowed.

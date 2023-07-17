@@ -1,5 +1,11 @@
 # OOP
 
+## Magic method
+
+`__getitem__` enables indexing and slicing.
+
+Division magic method is `__truediv__` for `/` and `__floordiv__` for `//`. `__div__` doesn't exist.
+
 ## Polymorphism
 
 The ability of an object to take on many forms and exhibit different behaviors based on the context.
