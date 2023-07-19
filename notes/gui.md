@@ -1,5 +1,9 @@
 # tkinter
 
+`pack()` organizes widgets in **blocks** before placing them in the parent widget.
+
+`grid()` organizes widgets in a **tabular** grid.
+
 ## Observable variable
 
 Works like a regular variable but also any change of the variable's state can be **observed** by external agents.

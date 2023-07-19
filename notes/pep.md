@@ -1,5 +1,18 @@
 # PEP
 
+PEP stages: Draft -> Accepted -> Final -> Active
+
+## Comment
+
+**Inline comment** is a comment on the same line as a statement. **Single-line comment** is the one above the statement.
+
+```python
+1 + 1  # inline comment
+
+# Single-line comment
+print("Hello")
+```
+
 ## String
 
 If string contains single-quote characters, it's recommended that you use double-quoted strings `comment = "I'm Yuki"`.

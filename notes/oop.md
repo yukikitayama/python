@@ -1,10 +1,19 @@
 # OOP
 
+## Inheritance
+
+`isinstance()` works on object of subclass of other superclass too.
+
 ## Magic method
 
-`__getitem__` enables indexing and slicing.
+`__getitem__()` enables indexing and slicing. Define behavior when the index operator `[]` is used.
 
-Division magic method is `__truediv__` for `/` and `__floordiv__` for `//`. `__div__` doesn't exist.
+`__index__()` is called on an object to get its associated **integer value**.
+
+Division magic method is `__truediv__()` for `/` and `__floordiv__()` for `//`. `__div__` doesn't exist.
+
+`__new__()` is used to create a new instance of a class before it is initialized. It's a static method that is called
+before `__init__()` when an object is created. Use it for specific control over the instance creation process.
 
 ## Polymorphism
 

@@ -99,6 +99,44 @@ For example `store/book[2]/author` to select the author of the **second** book i
 </store>
 ```
 
+`//university[location="Palo Alto, CA"]/name` finds any university regardless of its position by `//university` and
+filters by `location` and select `name` below.
+
+```
+<universities>
+  <university name="Harvard University">
+    <location>Cambridge, MA</location>
+    <rank>1</rank>
+  </university>
+  <university name="Stanford University">
+    <location>Palo Alto, CA</location>
+    <rank>2</rank>
+  </university>
+</universities>
+```
+
+`@` is used to search for a specific attributes. `find()` method is used to find the **first child** with a particular 
+**tag**.
+
+```
+<root>
+    <child id="1">
+        <grandchild>Grandchild 1</grandchild>
+    </child>
+    <child id="2">
+        <grandchild>Grandchild 2</grandchild>
+    </child>
+    <child id="3">
+        <grandchild>Grandchild 3</grandchild>
+    </child>
+</root>
+
+import xml.etree.ElementTree as ET
+
+root = ET.fromstring(xml_data)
+print(root.find('./child[@id="2"]/grandchild').text)
+```
+
 ## CSV
 
 Typically comma-separated values, but other separators such as semicolon or tab are also allowed.

@@ -14,7 +14,12 @@ Consists of header and contents
 
 `204` server successfully fulfilled the request, and no content in the response.
 
-`404` indicates that the requested resource was not found on the server.
+`404` indicates that the requested resource was **not found** on the server.
+
+`403` is when a user tries to access a resource that they do not have authorization to access.
+
+`401` is where a user needs to provide authentication credentials. It doesn't necessarily mean that the user doesn't
+have authorization to access a resource.
 
 `503` (service unavailable) is used when the server is temporarily unable to handle the request.
 
@@ -47,7 +52,7 @@ persistent connection.
 
 `socket.bind(address)` binds a socket toa specific network address and port combination.
 
-The below uses a UDP socket `SOCK_DGRAM` and `sendto()` method and send data over UDP.
+The below uses a UDP socket `SOCK_DGRAM`, `AF_INET` for IPv4, and `sendto()` method and send data over UDP.
 
 ```
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -56,13 +61,29 @@ client_socket.sendto("Hello, server!", ('localhost', 8080))
 client_socket.close()
 ```
 
-The below sends data over a TCP socket connection `SOCK_STREAM` and `send()` method.
+The below sends data over a TCP socket connection `SOCK_STREAM`, `AF_INET` for IPv4, and `send()` method.
 
 ```
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect(('localhost', 8080))
 client_socket.send("Hello, server!")
 client_socket.close()
+```
+
+The difference between TCP server socket and TCP client socket. Server uses `bind()` and `listen()`, but client only 
+uses `connect()`
+
+```python
+import socket
+
+# TCP server socket
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind(('localhost', 8080))
+server_soclet.listen()
+
+# TCP client socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client_socket.connect(('localhost', 8080))
 ```
 
 ## TCP
