@@ -1,8 +1,10 @@
 # tkinter
 
-`pack()` organizes widgets in **blocks** before placing them in the parent widget.
+`pack()` organizes widgets in **blocks** before placing them in the parent widget. It doesn't support a grid-like
+structure with the ability for widgets to span multiple blocks in both directions
 
-`grid()` organizes widgets in a **tabular** grid.
+`grid()` organizes widgets in a **tabular** grid. Widgets are organized in blocks along both horizontal and vertical axes.
+Span across multiple blocks.
 
 ## Observable variable
 

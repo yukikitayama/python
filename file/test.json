@@ -1,0 +1,9 @@
+{
+  "name": "yuki",
+  "numbers": [
+    1,
+    2,
+    3
+  ],
+  "is_morning": true
+}

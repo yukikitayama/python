@@ -1,5 +1,49 @@
 # File Processing
 
+## JSON
+
+`json.dump()` takes Python dictionary and writes it to JSON file
+
+`json.dumps()` takes Python dictionary and outputs string representing JSON.
+
+`json.JSONEncoder` and `json.JSONDecoder`
+
+```python
+import json
+ 
+ 
+class Vector:
+    def __init__(self, *components):
+        self.components = components
+ 
+    def __repr__(self):
+        return f'Vector{self.components}'
+ 
+    def __str__(self):
+        return f'{self.components}'
+ 
+ 
+class VectorEncoder(json.JSONEncoder):
+    def default(self, v):
+        if isinstance(v, Vector):
+            return v.__dict__
+        else:
+            return super().default(self, v)
+
+
+class VectorDecoder(json.JSONDecoder):
+    def __init__(self):
+        json.JSONDecoder.__init__(self, object_hook=self.decode_vector)
+
+    def decode_vector(self, d):
+        return Vector(*d["components"])
+
+
+v1 = Vector(4, 2, 6)
+json_str = json.dumps(v1, cls=VectorEncoder)
+new_vector = json.loads(json_str, cls=VectorDecoder)
+```
+
 ## XML
 
 Markup language for storing and transporting data by systems using the SOAP communication protocol.

@@ -86,6 +86,10 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect(('localhost', 8080))
 ```
 
+`recv()` method may return less data than requested, even if more data is available on the server. `recv()` method is a
+blocking operation, meaning it will wait until it receives at least one byte of data, but not guarantee that it will receive
+all the data in one call.
+
 ## TCP
 
 `ConnectionRefusedError` is the exception type when the client code establishes a TCP connection to the server but
@@ -108,3 +112,14 @@ UDP is often used for applications where **real-time** or **low-latency** commun
 
 Use `dnslib` to perform domain name system resolution to resolve domain names into IP addresses, construct DNS packets,
 parse DNS responses.
+
+## Network programming concept
+
+- TCP/IP sockets establish connections between clients and central server, real-time communication through server
+- Remote procedure calls (RPC) invokes procedures or methods on remote systems
+- WebSocket protocol establish real-time communication between clients and server over a single, long-lives connection
+- Publish-subscribe pattern where publishers send messages to a central message broker and subscribers receive messages.
+- Asynchronous I/O (asyncio) allows handling a large number of concurrent connections with a single thread by utilizing
+  non-blocking I/O operations and coroutines.
+- Multithreading creates multiple threads to handle concurrent connections, but it may not be the most efficient or scalable
+  solution for a large number of concurrent connections.

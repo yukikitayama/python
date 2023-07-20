@@ -2,6 +2,8 @@
 
 PEP stages: Draft -> Accepted -> Final -> Active
 
+In general, avoid using `global` keyword to modify a variable inside a function as this can cause name collisions in code.
+
 ## Comment
 
 **Inline comment** is a comment on the same line as a statement. **Single-line comment** is the one above the statement.
